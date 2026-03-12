@@ -143,8 +143,6 @@ This Google Apps Script replaces all blank cells within a selected range in the 
 
 This utility is especially useful when preparing data for formulas, reports, or exports where blank cells may cause errors or inaccurate results.
 
----
-
 ## How It Works
 
 The script reads all values from the currently selected range in the active sheet.
@@ -157,8 +155,6 @@ After processing the entire range, the updated values are written back to the sh
 
 A confirmation notification is displayed in the spreadsheet indicating that all blank cells were replaced.
 
----
-
 ## Use Case
 
 This script is useful when:
@@ -168,8 +164,6 @@ This script is useful when:
 * Cleaning imported data that contains empty values
 * Standardizing datasets before analysis
 * Filling missing numeric values with zero
-
----
 
 ## Script
 
@@ -191,8 +185,6 @@ function fillBlanksWithZero() {
   SpreadsheetApp.getActiveSpreadsheet().toast("✅ All blank cells in selected range replaced with 0");
 }
 ```
-
----
 
 ## Output
 
@@ -315,91 +307,6 @@ The script does not print to the Logger; instead, it modifies the spreadsheet di
 
 * **Successful match:** Cell background turns Light Yellow.
 * **No match:** Cell background remains unchanged.
-
----
-# 2. Replace Blank Cells with Zero in Google Sheets
-
-This Google Apps Script replaces all blank cells within a selected range in the active sheet with the value **0**. The script scans the selected range, identifies empty cells, and fills them with zero, helping ensure datasets are complete and ready for calculations or analysis.
-
-This utility is especially useful when preparing data for formulas, reports, or exports where blank cells may cause errors or inaccurate results.
-
----
-
-## How It Works
-
-The script reads all values from the currently selected range in the active sheet.
-
-Each cell value is checked to determine whether it is empty or null.
-
-If a blank cell is found, the script replaces the value with **0**.
-
-After processing the entire range, the updated values are written back to the sheet.
-
-A confirmation notification is displayed in the spreadsheet indicating that all blank cells were replaced.
-
----
-
-## Use Case
-
-This script is useful when:
-
-* Preparing datasets for numerical calculations
-* Preventing errors in formulas caused by blank cells
-* Cleaning imported data that contains empty values
-* Standardizing datasets before analysis
-* Filling missing numeric values with zero
-
----
-
-## Script
-
-```javascript
-function fillBlanksWithZero() {
-  var sheet = SpreadsheetApp.getActiveSheet();
-  var range = sheet.getActiveRange();
-  var values = range.getValues();
-
-  for (var i = 0; i < values.length; i++) {
-    for (var j = 0; j < values[i].length; j++) {
-      if (values[i][j] === "" || values[i][j] === null) {
-        values[i][j] = 0;
-      }
-    }
-  }
-
-  range.setValues(values);
-  SpreadsheetApp.getActiveSpreadsheet().toast("✅ All blank cells in selected range replaced with 0");
-}
-```
-
----
-
-## Output
-
-The script replaces all blank cells within the selected range with **0**.
-
-Example selected data:
-
-```
-10    20
-      15
-30
-```
-
-After running the script:
-
-```
-10    20
-0     15
-30    0
-```
-
-A notification message will appear in the sheet:
-
-```
-✅ All blank cells in selected range replaced with 0
-```
-
 
 ---
 ⭐ If you find this script useful, consider starring the repository.
