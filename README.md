@@ -1,11 +1,8 @@
-# Google-Sheets-Data-Cleaning-Toolkit
-A collection of Google Apps Script utilities for detecting hidden spreadsheet issues such as line breaks, extra spaces, formulas, and duplicate values.
-
 ## Platform
 
 Google Apps Script (for Google Sheets)
 
-## 1. Find Cells Containing Line Breaks in Google Sheets
+# 1. Find Cells Containing Line Breaks in Google Sheets
 This Google Apps Script scans the active sheet and identifies cells that contain line breaks (`\n`). It loops through all cells in the sheet and logs the A1 notation of any cell where a line break is detected.
 
 ## How It Works
@@ -53,7 +50,7 @@ Example:
 A3, B7, D12
 ```
 
-## 2. Highlight Cells with Leading or Trailing Spaces in Google Sheets
+# 2. Highlight Cells with Leading or Trailing Spaces in Google Sheets
 This Google Apps Script scans the active sheet to identify cells that contain "hidden" whitespace—specifically spaces at the very beginning or the very end of the text. Instead of just logging them, it visually highlights these cells by changing their background color to a light yellow.
 
 ## How It Works
