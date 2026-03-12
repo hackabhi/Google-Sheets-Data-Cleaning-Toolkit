@@ -150,6 +150,7 @@ function highlightDuplicates(columns) {
     var backgrounds = range.getBackgrounds();
     var map = {};
     var duplicatesCount = 0;
+
     for (var i = 0; i < values.length; i++) {
       var val = values[i][0];
       if (val !== "") {
@@ -164,6 +165,7 @@ function highlightDuplicates(columns) {
         map[normalized].push(i);
       }
     }
+
     for (var key in map) {
       if (map[key].length > 1) {
         duplicatesCount += map[key].length;
@@ -179,6 +181,7 @@ function highlightDuplicates(columns) {
 
 function columnLetterToNumber(letter) {
   var column = 0;
+
   for (var i = 0; i < letter.length; i++) {
     column = column * 26 + (letter.charCodeAt(i) - 64);
   }
